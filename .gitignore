@@ -38,3 +38,20 @@ Thumbs.db
 
 #dotCover
 *.dotCover
+
+# IntelliJ project files
+.idea
+.gradle
+build/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
