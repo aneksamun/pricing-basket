@@ -1,6 +1,6 @@
 package com.bjss.exercise.domain;
 
-import com.bjss.exercise.utilities.CurrencyUtil;
+import com.bjss.exercise.utility.CurrencyUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
@@ -50,15 +50,15 @@ public final class Receipt {
     @NotNull
     @Override
     public String toString() {
-        StringBuilder output = new StringBuilder();
-        output.append(format("Subtotal: %s\n", CurrencyUtil.getBritainCurrencyFormat(subtotal)));
-        output.append(getDiscountsText()).append("\n");
-        output.append(format("Total: %s\n", CurrencyUtil.getBritainCurrencyFormat(total)));
-        return output.toString();
+        return format("Subtotal: %s\n", CurrencyUtil.getBritainCurrencyFormat(subtotal)) +
+                getDiscountsText() + "\n" +
+                format("Total: %s\n", CurrencyUtil.getBritainCurrencyFormat(total));
     }
 
     private String getDiscountsText() {
-        if (discounts.isEmpty()) return "(No offers available)";
+        if (discounts.isEmpty()) {
+            return "(No offers available)";
+        }
         StringJoiner joiner = new StringJoiner("\n");
         discounts.forEach(discount -> joiner.add(discount.toString()));
         return joiner.toString();

@@ -1,4 +1,4 @@
-package com.bjss.exercise.utilities;
+package com.bjss.exercise.utility;
 
 import org.jetbrains.annotations.NotNull;
 

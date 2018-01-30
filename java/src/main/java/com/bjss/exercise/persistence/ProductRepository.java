@@ -5,5 +5,5 @@ import com.bjss.exercise.domain.Product;
 import java.util.Collection;
 
 public interface ProductRepository {
-    public Collection<Product> findByNames(String[] names);
+    Collection<Product> findByNames(String[] names);
 }

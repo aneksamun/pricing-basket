@@ -3,8 +3,8 @@ package com.bjss.exercise;
 import com.bjss.exercise.config.ApplicationConfig;
 import com.bjss.exercise.domain.Basket;
 import com.bjss.exercise.domain.Receipt;
-import com.bjss.exercise.services.BasketService;
-import com.bjss.exercise.services.PurchaseService;
+import com.bjss.exercise.service.BasketService;
+import com.bjss.exercise.service.PurchaseService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -30,7 +30,7 @@ public class Application {
             return;
         }
 
-        basket.findNotPresent(args).forEach(item -> System.out.println(format("The item '%s' is not present in stock.", item)));
+        basket.findAbsent(args).forEach(item -> System.out.println(format("The item '%s' is not present in stock.", item)));
 
         System.out.println();
 

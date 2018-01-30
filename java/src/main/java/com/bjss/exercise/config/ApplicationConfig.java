@@ -26,8 +26,12 @@ import static org.hibernate.cfg.AvailableSettings.SHOW_SQL;
 @PropertySource("persistence.properties")
 public class ApplicationConfig {
 
+    private final Environment environment;
+
     @Autowired
-    private Environment environment;
+    public ApplicationConfig(Environment environment) {
+        this.environment = environment;
+    }
 
     @Bean
     public PlatformTransactionManager transactionManager() {

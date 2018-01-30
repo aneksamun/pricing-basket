@@ -1,4 +1,4 @@
-package com.bjss.exercise.services;
+package com.bjss.exercise.service;
 
 import com.bjss.exercise.domain.Basket;
 import com.bjss.exercise.domain.Product;

@@ -1,10 +1,15 @@
 package com.bjss.exercise.domain;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
-import static com.bjss.exercise.utilities.CurrencyUtil.getBritainCurrencyFormat;
+import static com.bjss.exercise.utility.CurrencyUtil.getBritainCurrencyFormat;
+import static java.lang.Enum.valueOf;
+import static java.math.RoundingMode.HALF_UP;
 
 public final class Discount {
+
+    private static BigDecimal HUNDRED = new BigDecimal(100);
 
     private final String product;
     private final Integer percentage;
@@ -39,8 +44,7 @@ public final class Discount {
     }
 
     private static BigDecimal calculateDiscount(Integer discount, BigDecimal price) {
-        BigDecimal valueOfDiscount = BigDecimal.valueOf(discount.longValue());
-        BigDecimal valueOfHundred = BigDecimal.valueOf(100L);
-        return price.multiply(valueOfDiscount).divide(valueOfHundred, 2);
+        BigDecimal multiplication = price.multiply(new BigDecimal(discount));
+        return multiplication.divide(HUNDRED, 2, RoundingMode.HALF_UP);
     }
 }

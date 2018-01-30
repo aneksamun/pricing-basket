@@ -19,7 +19,7 @@ public final class Basket {
         return products;
     }
 
-    public Collection<String> findNotPresent(String[] items) {
+    public Collection<String> findAbsent(String[] items) {
         return Arrays.stream(items)
                 .filter(item -> products.stream().noneMatch(product -> product.getName().equalsIgnoreCase(item)))
                 .collect(Collectors.toList());
