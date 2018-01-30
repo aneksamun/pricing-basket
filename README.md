@@ -1,4 +1,4 @@
-#Pricing basket
+# Pricing basket
  
 Application prices a basket of goods taking into account some special offers.   
 The goods that can be purchased, together with their normal prices are:
